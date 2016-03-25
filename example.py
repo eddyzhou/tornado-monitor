@@ -13,8 +13,8 @@ import tornado.web
 
 from tornmc.client import Client
 
+from tornmon.hack_patch import RequestContext
 from tornmon.monitor import initialize_monitor
-from tornmon.track_patch import RequestContext
 
 
 define('port', default=8888, help='run on the given port', type=int)
@@ -92,7 +92,7 @@ class BarHandler(BaseHandler):
 
 
 application = Application()
-monitor = initialize_monitor(application, support_track=True)
+monitor = initialize_monitor(application, support_trace=True)
 
 
 def shutdown(*args):

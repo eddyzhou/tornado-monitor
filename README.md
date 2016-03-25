@@ -4,7 +4,7 @@
 
 - 监控tornado的运行(比如callback延时，内存、cpu占用等)
 - 增加`/monitor`接口，方便prometheus等监控系统pull收集的metric，或者通过ReportedPublisher周期性自动上报
-- 通过对handler进行hack(通过metaclass生成新的handler)，移入RequestContext，方便写入tracing数据(配合在公共库，如tornado-memcached写入tracing数据，thrift rpc传递span_id等，尽量做到对业务透明)；收集handler执行耗时，异常等数据
+- 通过对handler进行hack(通过metaclass生成新的handler)，移入RequestContext，方便写入tracing数据(配合在公共库，如tornado-memcached写入tracing数据，thrift rpc传递span_id等，尽量做到对业务透明)；也可以统计handler执行耗时，异常等数据
 
 # Usage
 

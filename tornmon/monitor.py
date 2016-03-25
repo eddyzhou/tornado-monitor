@@ -37,7 +37,7 @@ def initialize_monitor(tornado_app,
         publisher = HTTPEndPublisher(tornado_app)
     else:
         publisher = ReportedPublisher()
-    monitor = Monitor(tornado_app, publisher, **monitor_config)
+    monitor = Monitor(tornado_app, publisher, sentry_client, **monitor_config)
 
     duration_collector = DurationCollector(monitor)
     monitor.add_collector(duration_collector)
